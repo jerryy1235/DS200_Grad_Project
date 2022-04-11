@@ -16,6 +16,6 @@ We use Anaconda as our package manager.
 3. Open an Anaconda terminal, run as administrator
 4. In the Anaconda terminal, navigate to your repo directory
 5. Install required packages from env file:  `conda env create -f conda_environment.yml`
-6. Activate working environment: `conda activate 200_grad_proj`. You need to activate this environment each time you start an Anaconda terminal. Refer to [this link](https://makeoptim.com/en/tool/conda-default-python-env) to make it default.
+6. Activate working environment: `conda activate 200_grad_proj`. You need to activate this environment each time you start an Anaconda terminal. Refer to [this link](https://stackoverflow.com/questions/28436769/how-to-change-default-anaconda-python-environment) to make it default.
 7. Start an instance of Jupyter Lab using command: `jupyter lab`
 8. Continue in your browser
