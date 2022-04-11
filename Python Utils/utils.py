@@ -1,8 +1,4 @@
-from pathlib import Path
-import time
-
 import requests
-import pandas as pd
 import gdown
 
 def fetch_and_cache(data_url, file, data_dir="data", force=False):
