@@ -12,9 +12,10 @@ We suspect greenhouse gas levels have an impact on weather and air quality, and 
 We use Anaconda as our package manager. 
 
 1. Install [Anaconda](https://www.anaconda.com/products/distribution)
-2. Open an Anaconda terminal, run as administrator
-3. Install required packages:  `conda install -c conda-forge jupyterlab seaborn`  `conda install -c anaconda pandas scikit-learn`
-4. Clone this repository to your computer
-5. In the Anaconda terminal, navigate to your repo directory
-6. Open an instance of Jupyter Lab: `jupyter lab`
-7. Continue in your browser
+2. Clone this repository to your computer
+3. Open an Anaconda terminal, run as administrator
+4. In the Anaconda terminal, navigate to your repo directory
+5. Install required packages from env file:  `conda env create -f conda_environment.yml`
+6. Activate working environment: `conda activate 200_grad_proj`. You need to activate this environment each time you start an Anaconda terminal. Refer to [this link](https://makeoptim.com/en/tool/conda-default-python-env) to make it default.
+7. Start an instance of Jupyter Lab using command: `jupyter lab`
+8. Continue in your browser
