@@ -3,6 +3,7 @@ import time
 
 import requests
 import pandas as pd
+import gdown
 
 def fetch_and_cache(data_url, file, data_dir="data", force=False):
     """
@@ -96,3 +97,18 @@ def save_response_content(response, destination):
         for chunk in response.iter_content(CHUNK_SIZE):
             if chunk: # filter out keep-alive new chunks
                 f.write(chunk)
+                
+                
+def down_file_from_google_drive_folder(url, data_dir='Dataset', force=False):
+    file_path = Path(data_dir)
+    # If the file already exists and we want to force a download then
+    # delete the file first so that the creation date is correct.
+    if force and file_path.exists():
+        file_path.unlink()
+    if force or not file_path.exists():
+        file_path.mkdir(exist_ok = True)
+        gdown.download_folder(url, output=data_dir, quiet=False, use_cookies=True)
+        last_modified_time = time.ctime(file_path.stat().st_mtime)
+    else:
+        last_modified_time = time.ctime(file_path.stat().st_mtime)
+        print("Using cached version that was downloaded (UTC):", last_modified_time, "in folder", str(file_path.absolute()))
